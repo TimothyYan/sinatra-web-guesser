@@ -1,8 +1,15 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-number = rand(101)
+secret_number = rand(101)
+message = "too high!"
 
-  get '/' do
-    erb :index, :locals => { :number => number }
+
+get '/' do
+  guess = params["guess"].to_i
+  if guess > secret_number
+    "too high!"
+  end
+  
+  erb :index, :locals => { :secret_number => secret_number,  :message => message, :guess => guess }
 end

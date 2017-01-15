@@ -3,11 +3,12 @@
     <title>Sinatra Web Guesser</title>
   </head>
   <body>
-    <p>THE SECRET NUMBER IS <%= number %></p>
-      
-      <form>
-        <input type='text', name='guess'>
-        <input type='submit' value='Guess!'>
-      </form>
+    <p>THE SECRET NUMBER IS <%= secret_number %></p>
+    <p>Your guess: <%= guess %></p>
+    
+  <form>
+    <input type='text', name='guess' />
+    <input type='submit' value='Guess!' />
+  </form>
   </body>
 </html>
