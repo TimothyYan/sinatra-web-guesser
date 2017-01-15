@@ -2,8 +2,6 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 SECRET_NUMBER = rand(101)
-message = "too high!"
-
 
 get '/' do
   guess = params["guess"].to_i
@@ -13,16 +11,16 @@ end
 
 def check_guess(guess)
   if guess.nil?
-    "enter a number"
+    "Enter a number."
   elsif guess > SECRET_NUMBER + 5
-    "way too high"
+    "Way too high."
   elsif guess < SECRET_NUMBER - 5
-    "way too low"
+    "Way too low."
   elsif guess > SECRET_NUMBER
-    "too high"
+    "Too high."
   elsif guess < SECRET_NUMBER
-    "too low"
+    "Too low."
   elsif guess == SECRET_NUMBER
-    "correct, the secret number is #{SECRET_NUMBER}"
+    "Correct! The secret number is #{SECRET_NUMBER}."
   end
 end
